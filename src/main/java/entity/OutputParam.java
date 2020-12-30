@@ -4,12 +4,15 @@ import entity.Taxi;
 
 import java.util.List;
 
-public class Output {
+/**
+ * @author wang-hc
+ */
+public class OutputParam {
     private List<Taxi> writeOffTaxi;
     private List<Taxi> distanceRelatedMaintenanceTaxi;
     private List<Taxi> timeRelatedMaintenanceTaxi;
 
-    public Output(List<Taxi> writeOffTaxi, List<Taxi> distanceRelatedMaintenanceTaxi, List<Taxi> timeRelatedMaintenanceTaxi) {
+    public OutputParam(List<Taxi> writeOffTaxi, List<Taxi> distanceRelatedMaintenanceTaxi, List<Taxi> timeRelatedMaintenanceTaxi) {
         this.writeOffTaxi = writeOffTaxi;
         this.distanceRelatedMaintenanceTaxi = distanceRelatedMaintenanceTaxi;
         this.timeRelatedMaintenanceTaxi = timeRelatedMaintenanceTaxi;
@@ -19,23 +22,12 @@ public class Output {
         return writeOffTaxi;
     }
 
-    public void setWriteOffTaxi(List<Taxi> writeOffTaxi) {
-        this.writeOffTaxi = writeOffTaxi;
-    }
-
     public List<Taxi> getDistanceRelatedMaintenanceTaxi() {
         return distanceRelatedMaintenanceTaxi;
-    }
-
-    public void setDistanceRelatedMaintenanceTaxi(List<Taxi> distanceRelatedMaintenanceTaxi) {
-        this.distanceRelatedMaintenanceTaxi = distanceRelatedMaintenanceTaxi;
     }
 
     public List<Taxi> getTimeRelatedMaintenanceTaxi() {
         return timeRelatedMaintenanceTaxi;
     }
 
-    public void setTimeRelatedMaintenanceTaxi(List<Taxi> timeRelatedMaintenanceTaxi) {
-        this.timeRelatedMaintenanceTaxi = timeRelatedMaintenanceTaxi;
-    }
 }

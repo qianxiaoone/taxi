@@ -2,24 +2,21 @@ package Service;
 
 import entity.InputInfo;
 import entity.Taxi;
-import entity.Output;
+import entity.OutputParam;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author wang-hc
  */
-public class FixInfo {
+public class ReminderCars {
     private InputInfo inputInfo;
 
-    public FixInfo(InputInfo inputInfo) {
+    public ReminderCars(InputInfo inputInfo) {
         this.inputInfo = inputInfo;
     }
 
-    public Output getAllTypeCarsList() {
+    public OutputParam getAllTypeCarsList() {
         List<Taxi> writeOffTaxi = new ArrayList<>();
         List<Taxi> distanceRelatedMaintenanceTaxi = new ArrayList<>();
         List<Taxi> timeRelatedMaintenanceTaxi = new ArrayList<>();
@@ -41,13 +38,12 @@ public class FixInfo {
             t = getTimeRelatedMaintenanceCar(taxi);
             if (t != null) {
                 timeRelatedMaintenanceTaxi.add(t);
-                continue;
             }
         }
         Collections.sort(writeOffTaxi);
         Collections.sort(distanceRelatedMaintenanceTaxi);
         Collections.sort(timeRelatedMaintenanceTaxi);
-        return new Output(writeOffTaxi, distanceRelatedMaintenanceTaxi, timeRelatedMaintenanceTaxi);
+        return new OutputParam(writeOffTaxi, distanceRelatedMaintenanceTaxi, timeRelatedMaintenanceTaxi);
 
     }
 
@@ -58,26 +54,24 @@ public class FixInfo {
         }
         Calendar writeOffCalendar = (Calendar) taxi.getBuyTime().clone();
         writeOffCalendar.add(Calendar.DAY_OF_YEAR, writeOffDay);
-        if (writeOffCalendar.compareTo(taxi.getSubmitTime()) > 0) {
-            return true;
-        }
-        return false;
+//        if (writeOffCalendar.compareTo(taxi.getSubmitTime()) > 0) {
+//            return true;
+//        }
+//        return false;
+        return writeOffCalendar.compareTo(taxi.getSubmitTime()) > 0;
     }
 
     Taxi getWriteOffCar(Taxi taxi) {
-        int writeOffDay = 6 * 365;
-        if (taxi.isRepair()) {
-            writeOffDay = writeOffDay / 2;
-        }
+        int writeOffDay = (taxi.isRepair()) ? 3 * 365 : 6 * 365;
         Calendar writeOffCalendar = (Calendar) taxi.getBuyTime().clone();
         writeOffCalendar.add(Calendar.DAY_OF_YEAR, writeOffDay);
-        if (isForeOneMonth(taxi.getSubmitTime(), writeOffCalendar)) {
+        if (isReminderTime(taxi.getSubmitTime(), writeOffCalendar)) {
             return taxi;
         }
         return null;
     }
 
-    boolean isForeOneMonth(Calendar submitCal, Calendar endCal) {
+    boolean isReminderTime(Calendar submitCal, Calendar endCal) {
         int writeOffYear = endCal.get(Calendar.YEAR);
         int writeOffMonth = endCal.get(Calendar.MONTH) + 1;
         int submitYear = submitCal.get(Calendar.YEAR);
@@ -116,7 +110,7 @@ public class FixInfo {
             checkTime = (Calendar) taxi.getBuyTime().clone();
             checkTime.add(Calendar.MONTH, n * checkEveryMonth);
             if (submitTime.get(Calendar.YEAR) == checkTime.get(Calendar.YEAR)) {
-                if (isForeOneMonth(submitTime, checkTime)) {
+                if (isReminderTime(submitTime, checkTime)) {
                     return taxi;
                 } else {
                     continue;
@@ -128,4 +122,5 @@ public class FixInfo {
         }
         return null;
     }
+
 }

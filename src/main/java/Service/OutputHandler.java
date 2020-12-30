@@ -1,7 +1,7 @@
-package output;
+package Service;
 
 
-import entity.Output;
+import entity.OutputParam;
 import entity.Taxi;
 
 import java.util.List;
@@ -9,8 +9,8 @@ import java.util.List;
 /**
  * @author wang-hc
  */
-public class OutputInfo {
-    public StringBuilder printOutput(Output output) {
+public class OutputHandler {
+    public StringBuilder printOutput(OutputParam outputParam) {
         StringBuilder out = new StringBuilder();
         out.append("\n" +
                 "Reminder\n" +
@@ -19,20 +19,20 @@ public class OutputInfo {
         StringBuilder writeOffStr = new StringBuilder();
         StringBuilder distanceRelatedStr = new StringBuilder();
         StringBuilder timeRelatedStr = new StringBuilder();
-        if (output.getWriteOffTaxi().size() != 0) {
+        if (outputParam.getWriteOffTaxi().size() != 0) {
             writeOffStr.append("\n" +
                     "* Write-off coming soon...")
-                    .append(getInfoFromTaxiList(output.getWriteOffTaxi()));
+                    .append(getInfoFromTaxiList(outputParam.getWriteOffTaxi()));
         }
-        if (output.getDistanceRelatedMaintenanceTaxi().size() != 0) {
+        if (outputParam.getDistanceRelatedMaintenanceTaxi().size() != 0) {
             distanceRelatedStr.append("\n" +
                     "* Distance-related maintenance coming soon...")
-                    .append(getInfoFromTaxiList(output.getDistanceRelatedMaintenanceTaxi()));
+                    .append(getInfoFromTaxiList(outputParam.getDistanceRelatedMaintenanceTaxi()));
         }
-        if (output.getTimeRelatedMaintenanceTaxi().size() != 0) {
+        if (outputParam.getTimeRelatedMaintenanceTaxi().size() != 0) {
             timeRelatedStr.append("\n" +
                     "* Time-related maintenance coming soon...")
-                    .append(getInfoFromTaxiList(output.getTimeRelatedMaintenanceTaxi()));
+                    .append(getInfoFromTaxiList(outputParam.getTimeRelatedMaintenanceTaxi()));
         }
         return out.append(timeRelatedStr).append(distanceRelatedStr).append(writeOffStr);
     }

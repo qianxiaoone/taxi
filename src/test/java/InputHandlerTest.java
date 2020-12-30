@@ -1,18 +1,18 @@
-import Service.FixInfo;
+import Service.ReminderCars;
+import Service.InputHandler;
 import entity.InputInfo;
-import entity.Output;
+import entity.OutputParam;
 import entity.Taxi;
-import input.InputParam;
 import org.junit.Test;
-import output.OutputInfo;
+import Service.OutputHandler;
 
 import java.util.List;
 
-public class InputParamTest {
+public class InputHandlerTest {
     @Test
     public void getTaxiTest(){
         String str = "CAR0002|2029/10/14|Porsche|9000|F";
-        Taxi taxi = new InputParam().getTaxi(str);
+        Taxi taxi = new InputHandler().getTaxi(str);
 
         str = "SubmitDate: 2050/05/01\n" +
                 "\n" +
@@ -29,10 +29,10 @@ public class InputParamTest {
                 "CAR0006|2046/11/15|Jeep|2000|F\n" +
                 "\n" +
                 "CAR0007|2046/11/16|Jeep|5000|F";
-        List<Taxi> taxis = new InputParam().getTaxiInfo(str).getCheckTaxis();
-        InputInfo taxiInfo = new InputParam().getTaxiInfo(str);
-        FixInfo fixInfo = new FixInfo(taxiInfo);
-        Output output = fixInfo.getAllTypeCarsList();
-        System.out.println(new OutputInfo().printOutput(output).toString());
+        List<Taxi> taxis = new InputHandler().getTaxiInfo(str).getCheckTaxis();
+        InputInfo taxiInfo = new InputHandler().getTaxiInfo(str);
+        ReminderCars reminderCars = new ReminderCars(taxiInfo);
+        OutputParam outputParam = reminderCars.getAllTypeCarsList();
+        System.out.println(new OutputHandler().printOutput(outputParam).toString());
     }
 }

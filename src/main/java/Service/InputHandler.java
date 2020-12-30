@@ -1,4 +1,4 @@
-package input;
+package Service;
 
 import entity.InputInfo;
 import entity.Taxi;
@@ -13,14 +13,14 @@ import java.util.List;
 /**
  * @author wang-hc
  */
-public class InputParam {
+public class InputHandler {
     public InputInfo getTaxiInfo(String inputStr) {
         final String submitDate = "SubmitDate";
         Calendar checkDate = null;
-        List<Taxi> checkTaxis = new ArrayList<Taxi>();
+        List<Taxi> checkTaxis = new ArrayList<>();
         String[] inputArr = inputStr.split("\n");
         for (String inputLine : inputArr) {
-            if (inputLine.equals("")) {
+            if ("".equals(inputLine)) {
                 continue;
             }
             if (inputLine.startsWith(submitDate)) {
@@ -31,12 +31,12 @@ public class InputParam {
             taxi.setSubmitTime(checkDate);
             checkTaxis.add(taxi);
         }
-        return new InputInfo(checkDate, checkTaxis);
+        return new InputInfo(checkTaxis);
     }
 
     public Taxi getTaxi(String taxisInfo) {
         String[] taxiInfo = taxisInfo.split("\\|");
-        return new Taxi(taxiInfo[0], getCalendar(taxiInfo[1]), taxiInfo[2], Long.parseLong(taxiInfo[3]), taxiInfo[4].equals("T"));
+        return new Taxi(taxiInfo[0], getCalendar(taxiInfo[1]), taxiInfo[2], Long.parseLong(taxiInfo[3]), "T".equals(taxiInfo[4]));
     }
 
     public Calendar getCalendar(String str) {

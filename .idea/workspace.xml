@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a0ff09e-d84d-4767-8706-fdaf302751f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Service/FixInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/InputInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Output.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/input/InputParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/output/OutputInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/InputParamTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0a0ff09e-d84d-4767-8706-fdaf302751f9" name="Default Changelist" comment="2020-12-30重构提交">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/tax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Taxi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Service/FixInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/ReminderCars.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/InputInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/InputInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Output.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/OutputParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Taxi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Taxi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/input/InputParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/InputHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/output/OutputInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/OutputHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/InputParamTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InputHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Service/FixInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/InputInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/InputInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Output.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Taxi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Taxi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/input/InputParam.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/output/OutputInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/InputParamTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,20 +67,25 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
-  <component name="RunManager" selected="JUnit.InputParamTest.getTaxiTest">
-    <configuration name="InputParamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="Service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.InputHandlerTest">
+    <configuration name="InputHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="taxi" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InputParamTest" />
+      <option name="MAIN_CLASS_NAME" value="InputHandlerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InputParamTest.getTaxiTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InputHandlerTest.getTaxiTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="taxi" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InputParamTest" />
+      <option name="MAIN_CLASS_NAME" value="InputHandlerTest" />
       <option name="METHOD_NAME" value="getTaxiTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -174,8 +182,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.InputParamTest.getTaxiTest" />
-        <item itemvalue="JUnit.InputParamTest" />
+        <item itemvalue="JUnit.InputHandlerTest" />
+        <item itemvalue="JUnit.InputHandlerTest.getTaxiTest" />
       </list>
     </recent_temporary>
   </component>
@@ -206,11 +214,17 @@
       <workItem from="1609067648830" duration="13511000" />
       <workItem from="1609117120381" duration="22104000" />
       <workItem from="1609202903881" duration="25061000" />
+      <workItem from="1609241950238" duration="338000" />
+      <workItem from="1609289443820" duration="15997000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2020-12-30重构提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="2020-12-30重构提交" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#Project_Structure" timestamp="1609136493536">
@@ -221,14 +235,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1608863696134" />
-    <state x="976" y="51" key="#com.intellij.ide.util.MemberChooser" timestamp="1609232673309">
+    <state x="976" y="51" key="#com.intellij.ide.util.MemberChooser" timestamp="1609326778505">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="976" y="51" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1609232673309" />
-    <state x="502" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1609074064737">
+    <state x="976" y="51" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1609326778505" />
+    <state x="518" y="289" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1609290716004">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="502" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1609074064737" />
+    <state x="518" y="289" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1609290716004" />
+    <state x="462" y="222" width="441" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1609290692818">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="462" y="222" width="441" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1609290692818" />
+    <state x="460" y="197" key="#com.intellij.refactoring.move.moveInner.MoveInnerDialog" timestamp="1609290719145">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="460" y="197" key="#com.intellij.refactoring.move.moveInner.MoveInnerDialog/0.0.1366.728@0.0.1366.728" timestamp="1609290719145" />
+    <state x="502" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1609295626048">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="502" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1609295626048" />
+    <state x="252" y="0" key="CommitChangelistDialog2" timestamp="1609326871094">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="252" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1609326871094" />
     <state width="482" height="438" key="DebuggerActiveHint" timestamp="1609239883089">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -237,144 +267,164 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1609076220079" />
-    <state width="1323" height="265" key="GridCell.Tab.0.bottom" timestamp="1609241838706">
+    <state width="1323" height="330" key="GridCell.Tab.0.bottom" timestamp="1609327142705">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="265" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1609241838706" />
-    <state width="1323" height="265" key="GridCell.Tab.0.center" timestamp="1609241838705">
+    <state width="1323" height="330" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1609327142705" />
+    <state width="1323" height="330" key="GridCell.Tab.0.center" timestamp="1609327142704">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="265" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1609241838705" />
-    <state width="1323" height="265" key="GridCell.Tab.0.left" timestamp="1609241838705">
+    <state width="1323" height="330" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1609327142704" />
+    <state width="1323" height="330" key="GridCell.Tab.0.left" timestamp="1609327142704">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="265" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1609241838705" />
-    <state width="1323" height="265" key="GridCell.Tab.0.right" timestamp="1609241838706">
+    <state width="1323" height="330" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1609327142704" />
+    <state width="1323" height="330" key="GridCell.Tab.0.right" timestamp="1609327142705">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="265" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1609241838706" />
-    <state width="1323" height="265" key="GridCell.Tab.1.bottom" timestamp="1609241838706">
+    <state width="1323" height="330" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1609327142705" />
+    <state width="1323" height="265" key="GridCell.Tab.1.bottom" timestamp="1609326834779">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="265" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1609241838706" />
-    <state width="1323" height="265" key="GridCell.Tab.1.center" timestamp="1609241838706">
+    <state width="1323" height="265" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1609326834779" />
+    <state width="1323" height="265" key="GridCell.Tab.1.center" timestamp="1609326834779">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="265" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1609241838706" />
-    <state width="1323" height="265" key="GridCell.Tab.1.left" timestamp="1609241838706">
+    <state width="1323" height="265" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1609326834779" />
+    <state width="1323" height="265" key="GridCell.Tab.1.left" timestamp="1609326834778">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="265" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1609241838706" />
-    <state width="1323" height="265" key="GridCell.Tab.1.right" timestamp="1609241838706">
+    <state width="1323" height="265" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1609326834778" />
+    <state width="1323" height="265" key="GridCell.Tab.1.right" timestamp="1609326834779">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="265" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1609241838706" />
+    <state width="1323" height="265" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1609326834779" />
     <state x="184" y="6" key="SettingsEditor" timestamp="1609142552347">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1609142552347" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1609326553359">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1609326553359" />
+    <state x="363" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1609289445775">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="363" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1609289445775" />
+    <state x="413" y="131" key="extract.method.dialog" timestamp="1609308937507">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="131" key="extract.method.dialog/0.0.1366.728@0.0.1366.728" timestamp="1609308937507" />
+    <state x="398" y="155" key="git4idea.merge.GitPullDialog" timestamp="1609326464942">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="398" y="155" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1609326464942" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1609298474609">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1609298474609" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/InputParamTest.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/InputHandlerTest.java</url>
           <line>36</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/InputParamTest.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/InputHandlerTest.java</url>
           <line>14</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/InputParamTest.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/InputHandlerTest.java</url>
           <line>16</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/InputParamTest.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/InputHandlerTest.java</url>
           <line>34</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/InputParamTest.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/InputHandlerTest.java</url>
           <line>33</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/output/OutputInfo.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/Service/OutputHandler.java</url>
           <line>13</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/output/OutputInfo.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/Service/OutputHandler.java</url>
           <line>45</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/output/OutputInfo.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/Service/OutputHandler.java</url>
           <line>67</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Service/FixInfo.java</url>
-          <line>97</line>
+          <url>file://$PROJECT_DIR$/src/main/java/Service/ReminderCars.java</url>
+          <line>94</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Service/FixInfo.java</url>
-          <line>98</line>
+          <url>file://$PROJECT_DIR$/src/main/java/Service/ReminderCars.java</url>
+          <line>95</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Service/FixInfo.java</url>
-          <line>26</line>
+          <url>file://$PROJECT_DIR$/src/main/java/Service/ReminderCars.java</url>
+          <line>23</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Service/FixInfo.java</url>
-          <line>84</line>
+          <url>file://$PROJECT_DIR$/src/main/java/Service/ReminderCars.java</url>
+          <line>81</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Service/FixInfo.java</url>
-          <line>85</line>
+          <url>file://$PROJECT_DIR$/src/main/java/Service/ReminderCars.java</url>
+          <line>82</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Service/FixInfo.java</url>
-          <line>90</line>
+          <url>file://$PROJECT_DIR$/src/main/java/Service/ReminderCars.java</url>
+          <line>87</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Service/FixInfo.java</url>
-          <line>43</line>
+          <url>file://$PROJECT_DIR$/src/main/java/Service/ReminderCars.java</url>
+          <line>40</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Service/FixInfo.java</url>
-          <line>42</line>
+          <url>file://$PROJECT_DIR$/src/main/java/Service/ReminderCars.java</url>
+          <line>39</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Service/FixInfo.java</url>
-          <line>114</line>
+          <url>file://$PROJECT_DIR$/src/main/java/Service/ReminderCars.java</url>
+          <line>111</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Service/FixInfo.java</url>
-          <line>117</line>
+          <url>file://$PROJECT_DIR$/src/main/java/Service/ReminderCars.java</url>
+          <line>114</line>
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Service/FixInfo.java</url>
-          <line>128</line>
+          <url>file://$PROJECT_DIR$/src/main/java/Service/ReminderCars.java</url>
+          <line>125</line>
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Service/FixInfo.java</url>
-          <line>96</line>
+          <url>file://$PROJECT_DIR$/src/main/java/Service/ReminderCars.java</url>
+          <line>93</line>
           <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>

@@ -5,16 +5,13 @@ import java.util.Calendar;
 /**
  * @author wang-hc
  */
-public class Taxi implements Comparable {
+public class Taxi implements Comparable<Taxi> {
     private String taxiNo;
     private Calendar buyTime;
     private String brandName;
     private long usageLength;
     private boolean repair;
     private Calendar submitTime;
-
-    public Taxi() {
-    }
 
     public Taxi(String taxiNo, Calendar buyTime, String brandName, long usageLength, boolean repair) {
         this.taxiNo = taxiNo;
@@ -53,8 +50,7 @@ public class Taxi implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        Taxi o2 = (Taxi) o;
-        return this.getBrandName().compareTo(o2.getBrandName());
+    public int compareTo(Taxi o) {
+        return this.getBrandName().compareTo(o.getBrandName());
     }
 }
