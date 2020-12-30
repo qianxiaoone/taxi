@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="0a0ff09e-d84d-4767-8706-fdaf302751f9" name="Default Changelist" comment="2020-12-30重构提交">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Service/FixInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/ReminderCars.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/InputInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/InputInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Output.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/OutputParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Taxi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Taxi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/input/InputParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/InputHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/output/OutputInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/OutputHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/InputParamTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InputHandlerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Service/FixInfo.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/InputInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/InputInfo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/Output.class" beforeDir="false" />
@@ -208,16 +215,8 @@
       <workItem from="1609117120381" duration="22104000" />
       <workItem from="1609202903881" duration="25061000" />
       <workItem from="1609241950238" duration="338000" />
-      <workItem from="1609289443820" duration="16809000" />
+      <workItem from="1609289443820" duration="15997000" />
     </task>
-    <task id="LOCAL-00001" summary="2020-12-30重构提交">
-      <created>1609327218871</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1609327218871</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,18 +255,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="502" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1609295626048" />
-    <state x="252" y="0" key="CommitChangelistDialog2" timestamp="1609327217137">
+    <state x="252" y="0" key="CommitChangelistDialog2" timestamp="1609326871094">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="252" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1609327217137" />
+    <state x="252" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1609326871094" />
     <state width="482" height="438" key="DebuggerActiveHint" timestamp="1609239883089">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="482" height="438" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1609239883089" />
-    <state x="129" y="55" key="DiffContextDialog" timestamp="1609327169752">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="129" y="55" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1609327169752" />
     <state x="463" y="105" key="FileChooserDialogImpl" timestamp="1609076220079">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -308,10 +303,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1609142552347" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1609327240426">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1609326553359">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1609327240426" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1609326553359" />
     <state x="363" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1609289445775">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
