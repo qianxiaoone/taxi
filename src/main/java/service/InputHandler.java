@@ -1,4 +1,4 @@
-package Service;
+package service;
 
 import entity.InputInfo;
 import entity.Taxi;
@@ -12,6 +12,7 @@ import java.util.List;
 
 /**
  * @author wang-hc
+ *
  */
 public class InputHandler {
     public InputInfo getTaxiInfo(String inputStr) {
